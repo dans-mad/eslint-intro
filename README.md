@@ -7,7 +7,7 @@ A _linter_ is a tool that checks your source code to find programming errors, bu
 There are several linters available for JavaScript, and ESLint is the most popular. We will learn to install and use it, and to configure it for our own preferences.
 
 ## Prerequisites
- * node and npm installed
+ * VSCode, node and npm installed
 
 ## Setup
  In the `eslint-intro` directory, run the following commands:
