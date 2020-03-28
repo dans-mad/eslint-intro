@@ -1,12 +1,12 @@
 # eslint-intro
 Introduction to installing and using ESLint
 
-## linters
+## Linters
 A _linter_ is a tool that checks your source code to find programming errors, bugs, stylistic errors, and suspicious constructs. It can warn you of any errors or potential errors before you upload your code, or even while you're still writing it.
 
 There are several linters available for JavaScript, and ESLint is the most popular. We will learn to install and use it, and to configure it for our own preferences.
 
-## prerequisites
+## Prerequisites
  * node and npm installed
 
 ## Setup
