@@ -11,7 +11,8 @@ There are several linters available for JavaScript, and ESLint is the most popul
 
 ## Setup
  Fork and checkout this repo https://github.com/dans-mad/eslint-intro/
- * In the `eslint-intro` directory that you just checked out, run the following commands:
+ 
+ In the `eslint-intro` directory that you just checked out, run the following commands:
  * To set up eslint-intro as a node project, run: `npm init -y`
  * To install ESLint and its dependencies, run: `npm i -D eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard`
  * To create a basic configuration for linting, create a file called `.eslintrc.js` (don't forget the dot at the start!)
