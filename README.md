@@ -41,8 +41,8 @@ The full guide for configuring ESLint is at https://eslint.org/docs/user-guide/c
 
 * Replace the contents of `index.js` with this code: `var first_name = 'bob'`
 * Hover over the wiggly line under `first_name` and you will see two errors. The previous one *'first_name' is assigned a value but never used.eslint(no-unused-vars)* as well as a new error *Identifier 'first_name' is not in camel case.eslint(camelcase)*
-* Add a new line to the file: `console.log(first_name)`
-* Hover over the wiggly line again and you'll see there's now only one error. At the end of the error description it says *eslint(camelcase)*. This - _camelcase_ is the name of the rule that caught this error.
+* Add a new line add the end of the file: `console.log(first_name)`
+* Hover over the wiggly line again and you'll see there's now only one error. At the end of the error description it says *eslint(camelcase)*. This - _camelcase_ is the name of the rule that caught this error. Camel Case is the usual way of naming variables in JavaScript, it looks like this: `myVariableName`. But if you want variables named like this: `my_variable_name` then you will have to turn this rule off. 
 * Open up `eslint.rc.js` and inside the curly brackets, after `extends: 'standard'` add a comma and then `"rules": { "camelcase": "off" }`. The whole line should read:
 ```
 module.exports = { extends: 'standard', "rules": { "camelcase": "warn" } };
