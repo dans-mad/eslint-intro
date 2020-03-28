@@ -49,7 +49,7 @@ module.exports = { extends: 'standard', "rules": { "camelcase": "warn" } };
 ```
 * Looking again at `index.js`, you will see that there are no longer any errors.
 * Change `eslint.rc.js` so that instead of `"camelcase": "off"` it says `"camelcase": "warn"`
-* Return to `index.js` and you'll see that the wiggly line is back, but this time it's yellow. A warning means something like _this is really not recommended, but if you're *absolutely* sure this is the best way to do it, then go ahead.
+* Return to `index.js` and you'll see that the wiggly line is back, but this time it's yellow. A warning means something like _this is really not recommended, but if you're *absolutely* sure this is the best way to do it, then go ahead._
 
  ### Additional Exercise
   * Replace the contents of `index.js` with some of your own code, typed or pasted in. For example, you could paste your solutions to previous JavaScript exercises. See what potential problems the linter highlights, and how you can fix them.
