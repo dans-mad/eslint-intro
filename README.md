@@ -14,7 +14,7 @@ There are several linters available for JavaScript, and ESLint is the most popul
  
  In the `eslint-intro` directory that you just checked out, run the following commands:
  * To set up eslint-intro as a node project, run: `npm init -y`
- * To install ESLint and its dependencies, run: `npm i -D eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard`
+ * To install ESLint and its dependencies, run: `npm import --save-dev eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard`
  * To create a basic configuration for linting, create a file called `.eslintrc.js` (don't forget the dot at the start!)
  * Inside that file, add: `module.exports = { "extends": "standard" };`
  * In VSCode, click on the _Extensions_ icon on the left (or hit `Ctrl+Shift+X`), search for _ESLint_, and install the ESLint plugin (it should be the first one in the list of results)
@@ -51,8 +51,25 @@ module.exports = { extends: 'standard', "rules": { "camelcase": "warn" } };
 * Change `eslint.rc.js` so that instead of `"camelcase": "off"` it says `"camelcase": "warn"`
 * Return to `index.js` and you'll see that the wiggly line is back, but this time it's yellow. A warning means something like _this is really not recommended, but if you're *absolutely* sure this is the best way to do it, then go ahead._
 
+ ### Exercise 4 - npm projects
+ So far, we have created the npm project for `eslint-intro` from scratch. We did this by running:
+  1. `npm init -y` to initialise the project - this creates the file `package.json` and allows you to import npm modules
+  2. `npm import --save-dev eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard` - this does two things:
+    - imports and installs the packages `eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise` and `eslint-plugin-standard` into your `node_modules` directory
+    - adds these packages to the `dev-dependencies` of `package.json`.
+
+  When you clone a git repository which is already an npm project, you do not need to initialise it. Nor do you need to add any packages to the `dev-dependencies` of `package.json`. But you _do_ need to import and install those packages. You do this by running `npm install`
+
+  * Check out the branch named `setup` by running`git checkout setup`
+  * Open `package.json`
+  * Look at the section named `devDependencies`, and see that all of the eslint packages you previously added are in there
+  * Each package also lists the version of that package. In front of each of them is a carat (`^`). Investigate what this means and what other version options can be specified at https://docs.npmjs.com/files/package.json#dependencies
+  * Run `npm update`
+
+
  ### Additional Exercise
   * Replace the contents of `index.js` with some of your own code, typed or pasted in. For example, you could paste your solutions to previous JavaScript exercises. See what potential problems the linter highlights, and how you can either fix them, or turn off the rules that caused them. Before you do this though, try to understand why you might want to use this rule.
+  * Investigate the _prettier_ npm package: https://prettier.io/ - Prettier is not a Linter, it doesn't check or fix errors, but it rewrites your code into a standardised format (i.e. it applies rules about newlines, spacing, placing of braces and brackets etc, and formats your code to meet those rules).
 
 ## Revision
 Have a look through the full list of linting rules at https://eslint.org/docs/rules/ - you don't need to learn all of these (!) but it's useful to get an idea of how they're grouped, and what types of things are covered.
