@@ -61,8 +61,8 @@ module.exports = { extends: 'standard', "rules": { "camelcase": "warn" } };
   When you clone a git repository which is already an npm project, you do not need to initialise it. Nor do you need to add any packages to the `dev-dependencies` of `package.json`. But you _do_ need to import and install those packages. You do this by running `npm install`
 
   * Run `npm init` (_without the `-y`) to see what questions npm asks you when setting up a new project. Use any answers you like, and then look in `package.json` to see how it stores your answers.
-  * Revert any changes you have made 
-  * Now out the branch named `setup` by running`git checkout setup`
+  * Delete the new file `package.json`, so that your files are exactly the same as when you checked them out from git
+  * Now switch to the git branch named `setup` by running`git checkout setup`
   * Open `package.json`
   * Look at the section named `devDependencies`, and see that all of the eslint packages you previously added are in there
   * Each package also lists the version of that package. In front of each of them is a carat (`^`). Investigate what this means and what other version options can be specified at https://docs.npmjs.com/files/package.json#dependencies
