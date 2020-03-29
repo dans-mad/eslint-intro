@@ -60,12 +60,16 @@ module.exports = { extends: 'standard', "rules": { "camelcase": "warn" } };
 
   When you clone a git repository which is already an npm project, you do not need to initialise it. Nor do you need to add any packages to the `dev-dependencies` of `package.json`. But you _do_ need to import and install those packages. You do this by running `npm install`
 
-  * Check out the branch named `setup` by running`git checkout setup`
+  * Run `npm init` (_without the `-y`) to see what questions npm asks you when setting up a new project. Use any answers you like, and then look in `package.json` to see how it stores your answers.
+  * Revert any changes you have made 
+  * Now out the branch named `setup` by running`git checkout setup`
   * Open `package.json`
   * Look at the section named `devDependencies`, and see that all of the eslint packages you previously added are in there
   * Each package also lists the version of that package. In front of each of them is a carat (`^`). Investigate what this means and what other version options can be specified at https://docs.npmjs.com/files/package.json#dependencies
-  * Run `npm update`
-
+  * Run `npm install`
+  * You will see that a new file - `package-lock.json` appears. Have a quick peek at this file (it will be very long!) It lists the _exact_ version of each package dependency, and that dependency's dependencies, and those dependencies dependencies dependencies...When working on a project with other people, you should commit `package-lock.json` to your git repo to ensure that everyone is using the _exact_ same versions of each package
+  * Commit `package-lock.json` to the git repo.
+  * To update any of your dependencies to the latest compatible version, run `npm update`. As you have very recently run `npm install` you will probably not get any newer versions of packages, but if and when you do then `package-lock.json` will update to show the installed version, and (assuming everything still works!) you should commit the updated `package-lock.json`
 
  ### Additional Exercise
   * Replace the contents of `index.js` with some of your own code, typed or pasted in. For example, you could paste your solutions to previous JavaScript exercises. See what potential problems the linter highlights, and how you can either fix them, or turn off the rules that caused them. Before you do this though, try to understand why you might want to use this rule.
