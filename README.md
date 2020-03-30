@@ -26,13 +26,23 @@ An npm project is really just a directory with a file called `package.json` in i
     * Once Lodash has finished installing, look inside `package.json` again. You will see that `lodash` has been added to your project's `dependencies`. You can also see which version of Lodash you have installed - mine says `4.17.15` but when you do this exercise you will get the latest release version.
     * Lodash has also added _loads_ of files and directories inside `node_modules/` - have a look at them all! Most of these will be dependencies of Lodash.
  8. Let's talk about versions. There is a caret (`^`) in front of the version number, which means that when you or anyone else subseqently set up your project using `npm install` (a command we'll learn about in the next section) then it will pick a version which is the one specified or newer, but not a new major version. e.g. if your version says `^4.17.15` then your app will accept version `4.17.16` or `4.18.0` but won't accept `5.0.0` or greater. You can find out more about the caret and other modifiers for specifying version numbers, as well as the semver (semantic versioning) rules for comparing versions, at https://docs.npmjs.com/files/package.json#dependencies 
-    * Lodash has also added _loads_ of files and directories inside `node_modules/` - have a look at them all! Most of these will be dependencies of Lodash.
     * To update packages to the latest version allowed by `package.json`, type `npm update`. In the example where you currently have `4.17.15`, if three subsequent versions were available, `4.17.6`, `4.18.0` and `5.0.0` then npm would update your project's version to `4.18.0`
- 9.. Now let's install another type of dependency. Type `npm install --save-dev eslint`
+ 9. Now let's install another type of dependency. Type `npm install --save-dev eslint`
     * Look inside `package.json` and you will see that `eslint` has been stored under a new key called `devDependencies`. We will learn the difference between `dependencies` and `devDependencies` when we learn about Webpack.
+    * There will also be even _more_ stuff inside `node_modules`. Don't even look in there! From time to time you will probably find yourself deleting your `node_modules`, to remove all installed versions of packages, and freshly reinstall them.
 
 ### Checking out an npm project
-
+ 1. We're done with the directory you've been working in. Checkout the git repo for this section: TODO: insert repo details
+ 2. Change to the directory you've just installed, and look inside
+    * There is a file `src/index.js` - which is the app's `entry point` specified in `package.json`
+    * Our `node_modules` directory and the thousands of files and subdirectories in it are not there.
+    * There is a `package.json` in there, identical to the one you created in the last exercise (well, perhaps not exactly identical - if there are newer versions of `lodash` or `eslnt` available, then it will have their version numbers)
+ 3. The `dependencies` and `devDependencies` listed in `package.json` have not yet been installed to your local version of the project. Install them by typing `npm install`
+    * After a little while, the packages will have installed. `node_modules` has reappeared, with all its thousands of pesky files back in it.
+    * There is also a new file: `package-lock.json`
+ 4. Have a quick peek inside `package-lock.json`. It's very long, and contains the version number of each package you have installed, and every one of that package's dependencies.
+    * Unlike `package.json`, which can specify a range of permissible versions and let you install the latest one of them, `package-lock.json` tells you the _exact_ version number which you've installed.
+    * On most big projects, `package-lock.json` will be committed into the git repo. This ensures that every member of the team will be working with exactly the same set of dependencies and devDependencies, and also tracking the git history of `package-lock.json` helps you to do detective work if you upgrade a dependency and something stops working.
 
 ## Introduction to linters
 A _linter_ is a tool, distributed as an npm package, that checks your source code to find programming errors, stylistic errors, bugs and suspicious code. It can warn you of potential errors before you upload your code, or even while you're still writing it.
@@ -41,37 +51,36 @@ There are several linters available for JavaScript, and ESLint is the most popul
 
 ### Setting up ESLint
  
- * We installed ESLint in the exercise above, but it also has a number of plugins which we will need. So let's install them as additional dev dependencies: `npm install --save-dev eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard`
- * To create a basic configuration for linting, create a file called `.eslintrc.js` (don't forget the dot at the start!)
- * Inside that file, add: `module.exports = { "extends": "standard" };`
- * In VSCode, click on the _Extensions_ icon on the left (or hit `Ctrl+Shift+X`), search for _ESLint_, and install the ESLint plugin (it should be the first one in the list of results)
+ 1. We've already got ESLint installed, but ESLint allows for plugins, and we'll need some of these to allow us to select preset versions of JavaScript and style preferences that we want the ESLint rules to enforce. So let's install these plugins as additional dev dependencies: `npm install --save-dev eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard`
+ 2. To create a basic configuration for linting, create a file called `.eslintrc.js` (don't forget the dot at the start!)
+ 3. Inside that file, add: `module.exports = { "extends": "standard" };`
+ 4. In VSCode, click on the _Extensions_ icon on the left (or hit `Ctrl+Shift+X`), search for _ESLint_, and install the ESLint plugin (it should be the first one in the list of results)
 
 ### Finding errors with ESLint
- * Create a directory `src` and inside it a file `index.js`
- * Add two empty lines to the file
- * If you have ESLint and the VSCode plugin working correctly, you should see a wiggly red line
- * Hover over the wiggly red line, and a message will pop up: *Too many blank lines at the beginning of file. Max of 1 allowed.eslint(no-multiple-empty-lines)*
- * Delete all of the new lines, and replace them with the following JavaScript: `var name = 'bob'`
- * You should now see two wiggly red lines. Hover over the one under `name` and you will see _'name' is assigned a value but never used.eslint(no-unused-vars)_ 
- * Hover over the other wiggly line and you will see _Newline required at end of file but not found. eslint(eol-last)_
- * At the end of the line is a light-blue lightbulb. Click on it.
- * You will see several options. Click the top one, _Fix this eol-last problem_
- * ESLint will fix the problem for you by adding an extra line at the end of the file
-
+ 1. Open `src/index.js`
+ 2. Add two empty lines to the file
+    * If you have ESLint and the VSCode plugin working correctly, you should see a wiggly red line
+ 3. Hover over the wiggly red line, and a message will pop up: *Too many blank lines at the beginning of file. Max of 1 allowed.eslint(no-multiple-empty-lines)*
+ 4. Delete all of the new lines, and replace them with the following JavaScript: `var name = 'bob'`
+ 5. You should now see two wiggly red lines. Hover over the one under `name` and you will see _'name' is assigned a value but never used.eslint(no-unused-vars)_ 
+ 6. Hover over the other wiggly line and you will see _Newline required at end of file but not found. eslint(eol-last)_
+ 7. At the end of the line is a light-blue lightbulb. Click on it.
+ 8. You will see several options. Click the top one, _Fix this eol-last problem_
+    * ESLint will fix the problem for you by adding an extra line at the end of the file
 
 ### Configuring ESLint rules
-* ESLint is configured using the file `eslint.rc.js`. You can use existing rule sets, add your own rules and exceptions, and combine multiple sets of rules. At the moment, our `eslint.rc.js` just does one thing: extend (i.e. inherit) the standard set of rules. Let's add some exceptions...
-* Replace the contents of `index.js` with this code: `var first_name = 'bob'`
-* Hover over the wiggly line under `first_name` and you will see two errors. The previous one *'first_name' is assigned a value but never used.eslint(no-unused-vars)* as well as a new error *Identifier 'first_name' is not in camel case.eslint(camelcase)*
-* Add a new line add the end of the file: `console.log(first_name)`
-* Hover over the wiggly line again and you'll see there's now only one error. At the end of the error description it says *eslint(camelcase)*. This - _camelcase_ is the name of the rule that caught this error. Camel Case is the usual way of naming variables in JavaScript, it looks like this: `myVariableName`. But if you want variables named like this: `my_variable_name` then you will have to turn this rule off. 
-* Open up `eslint.rc.js` and inside the curly brackets, after `extends: 'standard'` add a comma and then `"rules": { "camelcase": "off" }`. The whole line should read:
+ESLint is configured using the file `eslint.rc.js`. You can use existing rule sets, add your own rules and exceptions, and combine multiple sets of rules. At the moment, our `eslint.rc.js` just does one thing: extend (i.e. inherit) the standard set of rules. Let's add some exceptions...
+1. Replace the contents of `index.js` with this code: `var first_name = 'bob'`
+2. Hover over the wiggly line under `first_name` and you will see two errors. The previous one *'first_name' is assigned a value but never used.eslint(no-unused-vars)* as well as a new error *Identifier 'first_name' is not in camel case.eslint(camelcase)*
+3. Add a new line add the end of the file: `console.log(first_name)`
+4. Hover over the wiggly line again and you'll see there's now only one error. At the end of the error description it says *eslint(camelcase)*. This - _camelcase_ is the name of the rule that caught this error. Camel Case is the usual way of naming variables in JavaScript, it looks like this: `myVariableName`. But if you want variables named like this: `my_variable_name` then you will have to turn this rule off. 
+5. Open up `eslint.rc.js` and inside the curly brackets, after `extends: 'standard'` add a comma and then `"rules": { "camelcase": "off" }`. The whole line should read:
 ```
 module.exports = { extends: 'standard', "rules": { "camelcase": "warn" } };
 ```
-* Looking again at `index.js`, you will see that there are no longer any errors.
-* Change `eslint.rc.js` so that instead of `"camelcase": "off"` it says `"camelcase": "warn"`
-* Return to `index.js` and you'll see that the wiggly line is back, but this time it's yellow. A warning means something like _this is really not recommended, but if you're *absolutely* sure this is the best way to do it, then go ahead._
+6. Looking again at `index.js`, you will see that there are no longer any errors.
+7. Change `eslint.rc.js` so that instead of `"camelcase": "off"` it says `"camelcase": "warn"`
+8. Return to `index.js` and you'll see that the wiggly line is back, but this time it's yellow. A warning means something like _this is really not recommended, but if you're *absolutely* sure this is the best way to do it, then go ahead._
 
 The full list of linting rules is at https://eslint.org/docs/rules/
 The full guide for configuring ESLint is at https://eslint.org/docs/user-guide/configuring
