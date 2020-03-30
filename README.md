@@ -12,15 +12,15 @@ An npm project is really just a directory with a file called `package.json` in i
 ### Setting up an npm project
  1. Create a new directory, and open it up in a terminal/bash/command window
  2. Type `npm init -y`
- 2. * You'll see a new file created, `package.json`. Open it and have a look through. The file contains a JavaScript object (surrounded by brackets: `{ }`) with a number of keys including `name`, `version` and `description`
+   * You'll see a new file created, `package.json`. Open it and have a look through. The file contains a JavaScript object (surrounded by brackets: `{ }`) with a number of keys including `name`, `version` and `description`
  3. Delete the file `package.json`
  4. Now run `npm init`, this time without the `-y` flag
- 4. * Before creating the file, npm now asks you some questions. You can press enter on each question to accept the default values.
+   * Before creating the file, npm now asks you some questions. You can press enter on each question to accept the default values.
  5. For now, give these answers:
-  * Leave `package name` and `version` as default
-  * Type whatever you like into the `description`
-  * For `entry point` answer `src/index.js` - because we're going to put our entry point (the start of our JavaScript application) in a directory called `src`. This is fairly common practice, especially on larger projects - all of the JavaScript you write will go in the `src` directory, so that it doesn't get lost in the muddle of configuration and other files in the root directory of the project.
-  * Leave the other questions as default except for `name` which you can... put your name in!
+   * Leave `package name` and `version` as default
+   * Type whatever you like into the `description`
+   * For `entry point` answer `src/index.js` - because we're going to put our entry point (the start of our JavaScript application) in a directory called `src`. This is fairly common practice, especially on larger projects - all of the JavaScript you write will go in the `src` directory, so that it doesn't get lost in the muddle of configuration and other files in the root directory of the project.
+   * Leave the other questions as default except for `name` which you can... put your name in!
  * Open up the newly generated `package.json` and see how your answers to all of the questions have been stored there.
  * Let's install a package. Type `npm install lodash` and hit enter. It will probably take a little while for npm to install Lodash, with lots and lots of status messages scrolling past in the meantime. Lodash is a "Swiss army knife" type utility, with lots and lots of functions which make it easier to work with Objects, Arrays, Strings and other JavaScript data types.
  * Once Lodash has finished installing, look inside package.json again. You will see that `lodash` has been added to your project's `dependencies`.
