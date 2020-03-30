@@ -1,5 +1,5 @@
 {
-  "name": "eslint-intro",
+  "name": "npm-intro",
   "version": "1.0.0",
   "description": "Introduction to installing and using ESLint",
   "main": "src/index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dans-mad/eslint-intro.git"
+    "url": "git+https://github.com/dans-mad/npm-intro.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dans-mad/eslint-intro/issues"
+    "url": "https://github.com/dans-mad/npm-intro/issues"
   },
-  "homepage": "https://github.com/dans-mad/eslint-intro#readme",
+  "homepage": "https://github.com/dans-mad/npm-intro#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
