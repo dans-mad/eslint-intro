@@ -15,20 +15,22 @@ An npm project is really just a directory with a file called `package.json` in i
     * You'll see a new file created, `package.json`. Open it and have a look through. The file contains a JavaScript object (surrounded by brackets: `{ }`) with a number of keys including `name`, `version` and `description`
  3. Delete the file `package.json`
  4. Now run `npm init`, this time without the `-y` flag
-   * Before creating the file, npm now asks you some questions. You can press enter on each question to accept the default values.
+    * Before creating the file, npm now asks you some questions. You can press enter on each question to accept the default values.
  5. For now, give these answers:
     * Leave `package name` and `version` as default
     * Type whatever you like into the `description`
     * For `entry point` answer `src/index.js` - because we're going to put our entry point (the start of our JavaScript application) in a directory called `src`. This is fairly common practice, especially on larger projects - all of the JavaScript you write will go in the `src` directory, so that it doesn't get lost in the muddle of configuration and other files in the root directory of the project.
     * Leave the other questions as default except for `name` which you can... put your name in!
  6. Open up the newly generated `package.json` and see how your answers to all of the questions have been stored there.
- 7. Let's install a package. Type `npm install lodash` and hit enter. It will probably take a little while for npm to install Lodash, with lots and lots of status messages scrolling past in the meantime. Lodash is a "Swiss army knife" type utility, with lots and lots of functions which make it easier to work with Objects, Arrays, Strings and other JavaScript data types.
-    * Once Lodash has finished installing, look inside package.json again. You will see that `lodash` has been added to your project's `dependencies`.
-    * Lodash has also added _loads_ of files and directories inside `node_modules/` - have a look at them all! Most of these will be dependencies of Lodash.
+ 7. Let's install a 3rd party package. Type `npm install lodash` and hit enter. It will probably take a little while for npm to install Lodash, with lots and lots of status messages scrolling past in the meantime. Lodash is a "Swiss army knife" type utility, with lots and lots of functions which make it easier to work with Objects, Arrays, Strings and other JavaScript data types.
+    * Once Lodash has finished installing, look inside `package.json` again. You will see that `lodash` has been added to your project's `dependencies`.
     * In the `dependencies` section of `package.json` you can also see which version of Lodash you have installed - mine says `4.17.15` but when you do this exercise you will get the latest release version.
-    * There is a caret (`^`) in front of the version number, which means that when you or anyone else subseqently set up your project using `npm install` (a command we'll learn about in the next section) then it will pick a version which is the one specified or newer, but not a new major version. e.g. if your version says `^4.17.15` then your app will accept version `4.17.16` or `4.18.0` but won't accept `5.0.0` or greater. You can find out more about the caret and other modifiers for specifying version numbers, as well as the semver (semantic versioning) rules for comparing versions, at https://docs.npmjs.com/files/package.json#dependencies 
+    * Lodash has also added _loads_ of files and directories inside `node_modules/` - have a look at them all! Most of these will be dependencies of Lodash.
+
+ 8. Let's talk about versions. There is a caret (`^`) in front of the version number, which means that when you or anyone else subseqently set up your project using `npm install` (a command we'll learn about in the next section) then it will pick a version which is the one specified or newer, but not a new major version. e.g. if your version says `^4.17.15` then your app will accept version `4.17.16` or `4.18.0` but won't accept `5.0.0` or greater. You can find out more about the caret and other modifiers for specifying version numbers, as well as the semver (semantic versioning) rules for comparing versions, at https://docs.npmjs.com/files/package.json#dependencies 
+    * Lodash has also added _loads_ of files and directories inside `node_modules/` - have a look at them all! Most of these will be dependencies of Lodash.
     * To update packages to the latest version allowed by `package.json`, type `npm update`. In the example where you currently have `4.17.15`, if three subsequent versions were available, `4.17.6`, `4.18.0` and `5.0.0` then npm would update your project's version to `4.18.0`
- 8. Now let's install another type of dependency. Type `npm install --save-dev eslint`
+ 9.. Now let's install another type of dependency. Type `npm install --save-dev eslint`
     * Look inside `package.json` and you will see that `eslint` has been stored under a new key called `devDependencies`. We will learn the difference between `dependencies` and `devDependencies` when we learn about Webpack.
 
 ### Checking out an npm project
