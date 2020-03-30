@@ -5,16 +5,6 @@ Introduction to npm projects and tools, including linters (ESLint) and Lodash.
 ## Prerequisites
  * VSCode, node and npm installed
 
-## Contents 
-Initialising an npm project
-Project structure
-Installing packages
-Checking & formatting code with Linting & Prettier
-Transpiling code with Babel
-Alternative languages - TypeScript, Elm, PureScript, ClojureScript…
-Utility functions with Lodash
-Creating a build pipeline with Webpack
-
 ## Introduction to npm
 npm stands for Node Package Manager. It let's you install packages to your machine, either globally or in an npm project. Global packages are usually tools you want to run like any other application on your machine, we'll cover some of them later. For now, what we're really interested are the npm projects you create to run a website.
 
@@ -31,7 +21,7 @@ An npm project is really just a directory with a file called `package.json` in i
  * For now, give these answers:
   * Leave `package name` and `version` as default
   * Type whatever you like into the `description`
-  * For `entry point` answer `src/index.js` - because we're going to put our entry point (the start of our JavaScript application) in a directory called `src`
+  * For `entry point` answer `src/index.js` - because we're going to put our entry point (the start of our JavaScript application) in a directory called `src`. This is fairly common practice, especially on larger projects - all of the JavaScript you write will go in the `src` directory, so that it doesn't get lost in the muddle of configuration and other files in the root directory of the project.
   * Leave the other questions as default except for `name` which you can... put your name in!
  * Open up the newly generated `package.json` and see how your answers to all of the questions have been stored there.
  * Let's install a package. Type `npm install lodash` and hit enter. It will probably take a little while for npm to install Lodash, with lots and lots of status messages scrolling past in the meantime. Lodash is a "Swiss army knife" type utility, with lots and lots of functions which make it easier to work with Objects, Arrays, Strings and other JavaScript data types.
