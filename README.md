@@ -82,8 +82,7 @@ module.exports = { extends: 'standard', "rules": { "camelcase": "warn" } };
 7. Change `eslint.rc.js` so that instead of `"camelcase": "off"` it says `"camelcase": "warn"`
 8. Return to `index.js` and you'll see that the wiggly line is back, but this time it's yellow. A warning means something like _this is really not recommended, but if you're *absolutely* sure this is the best way to do it, then go ahead._
 
-The full list of linting rules is at https://eslint.org/docs/rules/
-The full guide for configuring ESLint is at https://eslint.org/docs/user-guide/configuring
+The full list of linting rules is at https://eslint.org/docs/rules/  and the full guide for configuring ESLint is at https://eslint.org/docs/user-guide/configuring 
 
  ### Additional Exercise
   * Replace the contents of `index.js` with some of your own code, typed or pasted in. For example, you could paste your solutions to previous JavaScript exercises. See what potential problems the linter highlights, and how you can either fix them, or turn off the rules that caused them. Before you do this though, try to understand why you might want to use this rule.
