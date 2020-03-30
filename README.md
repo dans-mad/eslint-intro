@@ -1,5 +1,14 @@
-# eslint-intro
-Introduction to installing and using ESLint
+# npm-intro
+Introduction to npm projects and tools, including linters (ESLint) and Lodash.
+
+Initialising an npm project
+Project structure
+Installing packages
+Checking & formatting code with Linting & Prettier
+Transpiling code with Babel
+Alternative languages - TypeScript, Elm, PureScript, ClojureScript…
+Utility functions with Lodash
+Creating a build pipeline with Webpack
 
 ## Linters
 A _linter_ is a tool that checks your source code to find programming errors, bugs, stylistic errors, and suspicious constructs. It can warn you of any errors or potential errors before you upload your code, or even while you're still writing it.
@@ -10,10 +19,10 @@ There are several linters available for JavaScript, and ESLint is the most popul
  * VSCode, node and npm installed
 
 ## Setup
- Fork and checkout this repo https://github.com/dans-mad/eslint-intro/
+ Fork and checkout this repo https://github.com/dans-mad/npm-intro/
  
- In the `eslint-intro` directory that you just checked out, run the following commands:
- * To set up eslint-intro as a node project, run: `npm init -y`
+ In the `npm-intro` directory that you just checked out, run the following commands:
+ * To set up npm-intro as a node project, run: `npm init -y`
  * To install ESLint and its dependencies, run: `npm import --save-dev eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard`
  * To create a basic configuration for linting, create a file called `.eslintrc.js` (don't forget the dot at the start!)
  * Inside that file, add: `module.exports = { "extends": "standard" };`
@@ -52,7 +61,7 @@ module.exports = { extends: 'standard', "rules": { "camelcase": "warn" } };
 * Return to `index.js` and you'll see that the wiggly line is back, but this time it's yellow. A warning means something like _this is really not recommended, but if you're *absolutely* sure this is the best way to do it, then go ahead._
 
  ### Exercise 4 - npm projects
- So far, we have created the npm project for `eslint-intro` from scratch. We did this by running:
+ So far, we have created the npm project for `npm-intro` from scratch. We did this by running:
   1. `npm init -y` to initialise the project - this creates the file `package.json` and allows you to import npm modules
   2. `npm import --save-dev eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard` - this does two things:
     - imports and installs the packages `eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise` and `eslint-plugin-standard` into your `node_modules` directory
