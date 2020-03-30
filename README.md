@@ -88,6 +88,10 @@ The full list of linting rules is at https://eslint.org/docs/rules/  and the ful
   * Replace the contents of `index.js` with some of your own code, typed or pasted in. For example, you could paste your solutions to previous JavaScript exercises. See what potential problems the linter highlights, and how you can either fix them, or turn off the rules that caused them. Before you do this though, try to understand why you might want to use this rule.
   * Investigate the _prettier_ npm package: https://prettier.io/ - Prettier is not a Linter, it doesn't check or fix errors, but it rewrites your code into a standardised format (i.e. it applies rules about newlines, spacing, placing of braces and brackets etc, and formats your code to meet those rules).
 
+## Lodash
+
+### Using Lodash
+
 ## Revision & Reference
 Have a look through the full list of linting rules at https://eslint.org/docs/rules/ - you don't need to learn all of these (!) but it's useful to get an idea of how they're grouped, and what types of things are covered.
 You can also disable rules for individual files and blocks of code - see https://eslint.org/docs/user-guide/configuring#disabling-rules-with-inline-comments
