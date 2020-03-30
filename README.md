@@ -91,6 +91,21 @@ The full list of linting rules is at https://eslint.org/docs/rules/  and the ful
 ## Lodash
 
 ### Using Lodash
+Needs HTML:
+```
+<!doctype html>
+<html>
+<head>
+  <title>Getting Started</title>
+  -
+  <script src="https://unpkg.com/lodash@4.16.6"></script>
+</head>
+<body>
+  -
+  <script src="./src/index.js"></script>
+</body>
+</html>
+```
 
 ## Revision & Reference
 Have a look through the full list of linting rules at https://eslint.org/docs/rules/ - you don't need to learn all of these (!) but it's useful to get an idea of how they're grouped, and what types of things are covered.
