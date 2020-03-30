@@ -1,7 +1,6 @@
 # npm-intro
 Introduction to npm projects and tools, including linters (ESLint) and Lodash.
 
-
 ## Prerequisites
  * VSCode, node and npm installed
 
@@ -10,15 +9,14 @@ npm stands for Node Package Manager. It let's you install packages to your machi
 
 An npm project is really just a directory with a file called `package.json` in it. We'll encounter this file soon, and see how it configures your application to run. You can install many other npm packages inside your own project as _dependencies_. npm packages have their own dependencies too, which means that when you add a package it will usually also install all of the other npm packages that it depends upon.
 
-
 ### Setting up an npm project
- * Create a new directory, and open it up in a terminal/bash/command window
- * Type `npm init -y`
- * You'll see a new file created, `package.json`. Open it and have a look through. The file contains a JavaScript object (surrounded by brackets: `{ }`) with a number of keys including `name`, `version` and `description`
- * Delete the file `package.json`
- * Now run `npm init`, this time without the `-y` flag
- * Before creating the file, npm now asks you some questions. You can press enter on each question to accept the default values.
- * For now, give these answers:
+ 1. Create a new directory, and open it up in a terminal/bash/command window
+ 2. Type `npm init -y`
+ 2. * You'll see a new file created, `package.json`. Open it and have a look through. The file contains a JavaScript object (surrounded by brackets: `{ }`) with a number of keys including `name`, `version` and `description`
+ 3. Delete the file `package.json`
+ 4. Now run `npm init`, this time without the `-y` flag
+ 4. * Before creating the file, npm now asks you some questions. You can press enter on each question to accept the default values.
+ 5. For now, give these answers:
   * Leave `package name` and `version` as default
   * Type whatever you like into the `description`
   * For `entry point` answer `src/index.js` - because we're going to put our entry point (the start of our JavaScript application) in a directory called `src`. This is fairly common practice, especially on larger projects - all of the JavaScript you write will go in the `src` directory, so that it doesn't get lost in the muddle of configuration and other files in the root directory of the project.
@@ -32,6 +30,9 @@ An npm project is really just a directory with a file called `package.json` in i
  * To update packages to the latest version allowed by `package.json`, type `npm update`. In the example where you currently have `4.17.15`, if three subsequent versions were available, `4.17.6`, `4.18.0` and `5.0.0` then npm would update your project's version to `4.18.0`
  * Now let's install another type of dependency. Type `npm install --save-dev eslint`
  * Look inside `package.json` and you will see that `eslint` has been stored under a new key called `devDependencies`. We will learn the difference between `dependencies` and `devDependencies` when we learn about Webpack.
+
+### Checking out an npm project
+
 
 ## Introduction to linters
 A _linter_ is a tool, distributed as an npm package, that checks your source code to find programming errors, stylistic errors, bugs and suspicious code. It can warn you of potential errors before you upload your code, or even while you're still writing it.
